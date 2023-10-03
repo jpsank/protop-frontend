@@ -1,7 +1,7 @@
 import {useState, useEffect} from 'react';
 import axios from 'axios';
 
-const Search = () => {
+const SearchPage = () => {
 
     const [data, setData] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
@@ -73,5 +73,5 @@ const Search = () => {
     )
 };
 
-export default Search;
+export default SearchPage;
             
