@@ -5,7 +5,7 @@ import SearchPage from "./pages/SearchPage";
 import Catalog from "./pages/Catalog";
 import Editor from "./pages/Editor";
 import DeepLearning from "./pages/DeepLearning";
-import Contact from "./pages/Contact";
+import About from "./pages/About";
 import NoPage from "./pages/NoPage";
 
 export default function App() {
@@ -18,7 +18,7 @@ export default function App() {
           <Route path="catalog" element={<Catalog />} />
           <Route path="editor" element={<Editor />} />
           <Route path="ml" element={<DeepLearning />} />
-          <Route path="contact" element={<Contact />} />
+          <Route path="about" element={<About />} />
           <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>

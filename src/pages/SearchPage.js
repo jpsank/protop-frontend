@@ -1,5 +1,6 @@
 import {useState, useEffect} from 'react';
 import axios from 'axios';
+import { Container } from 'react-bootstrap';
 
 const SearchPage = () => {
 
@@ -44,7 +45,7 @@ const SearchPage = () => {
     }, []);
 
     return (
-        <>
+        <Container className="my-5 mx-sm-5 mx-0">
             <h1>Search</h1>
             <h2> Clinvar </h2>
             {isLoading ? (
@@ -69,7 +70,7 @@ const SearchPage = () => {
                     </tbody>
                 </table>
             )}
-        </>
+        </Container>
     )
 };
 

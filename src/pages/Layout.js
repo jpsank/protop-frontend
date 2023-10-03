@@ -19,48 +19,48 @@ const Layout = () => {
     }, []);
 
     return (
-        <>
+        <Container fluid className="p-0">
             <div style={{height: sticky ? NAVBAR_HEIGHT + ABOVE : "0px"}}></div>
-            <Navbar bg="white" expand="lg" className="px-sm-5 px-3" fixed={sticky ? "top" : ""} style={{marginTop: sticky ? 0 : ABOVE, height: NAVBAR_HEIGHT, opacity: sticky ? 0.9 : 1}}>
+            <Navbar bg="white" expand="lg" className="px-sm-5 px-3" fixed={sticky ? "top" : ""} style={{marginTop: sticky ? 0 : ABOVE, height: NAVBAR_HEIGHT}}>
                 <LinkContainer to="/">
-                    <Navbar.Brand>
+                    <Navbar.Brand className="fs-4 me-5 align-items-center d-flex">
+                        <img src="logo.jpg" alt="logo" style={{height: "1.5em", marginRight: "0.5em"}} />
                         ProTop
                     </Navbar.Brand>
                 </LinkContainer>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="mr-auto">
+                    <Nav className="flex-grow-1 justify-content-evenly" activeKey={window.location.pathname}>
+                        <LinkContainer to="/about">
+                            <Nav.Link>About</Nav.Link>
+                        </LinkContainer>
                         <LinkContainer to="/search">
-                            <Nav.Link>SEARCH PDB</Nav.Link>
+                            <Nav.Link>Protein Search</Nav.Link>
                         </LinkContainer>
                         <LinkContainer to="/catalog">
-                            <Nav.Link>KNOTTED CATALOG</Nav.Link>
+                            <Nav.Link>KnotCat</Nav.Link>
                         </LinkContainer>
                         <LinkContainer to="/editor">
-                            <Nav.Link>PDB EDITOR</Nav.Link>
+                            <Nav.Link>PDBEdit</Nav.Link>
                         </LinkContainer>
                         <LinkContainer to="/ml">
-                            <Nav.Link>DEEP LEARNING</Nav.Link>
-                        </LinkContainer>
-                        <LinkContainer to="/contact">
-                            <Nav.Link>CONTACT</Nav.Link>
+                            <Nav.Link>Deep Learning</Nav.Link>
                         </LinkContainer>
                         <LinkContainer to="/login">
-                            <Nav.Link>LOGIN</Nav.Link>
+                            <Nav.Link>Login</Nav.Link>
                         </LinkContainer>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
             
-            <Container fluid className="p-5" style={{height: "120vh"}}>
+            <Container fluid style={{minHeight: "75vh"}}>
                 <Outlet />
             </Container>
 
-            <Container fluid className="mt-5">
-                <hr />
-                <p className="text-center">© 2023 ProTop</p>
+            <Container fluid className="bg-dark text-white py-5">
+                <p className="text-center m-0">© 2023 ProTop</p>
             </Container>
-        </>
+        </Container>
     );
 };
 
